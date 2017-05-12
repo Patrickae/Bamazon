@@ -18,7 +18,7 @@ function start(){
 			console.log("|| ID: "+res[i].item_id+" || " + res[i].product_name +" || $" + res[i].price + "||");
 		};
 	});
-	setTimeout(interface, 1000);
+	setTimeout(interface, 500);
 };
 
 
@@ -63,16 +63,29 @@ function interface(){
 
 				if(res[0].stock_quantity > amount){
 					console.log("--------Total Price: $"+res[0].price * amount+"------------");
+					var updatedQuantity = res[0].stock_quantity - amount;
+
+					connection.query("UPDATE products SET ? WHERE ?",[{stock_quantity: updatedQuantity},{item_id: ID}], function(err){
+							if (err) throw err;
+							console.log("-----updated quantity "+ updatedQuantity+"---------");
+									});
+
 				}else{
-					console.log("Sorry, there are not that many items in stock");
-					// setTimeout(interface(), 2000);
+					console.log("Sorry, there are only " + res[0].stock_quantity +" of this item in stock");
+					
 				};
 
-				setTimeout(start, 2000);
+				
+
+
+				
+
+				
+
 
 			});
 
-
+			setTimeout(start, 1000);
 
 		});
 
