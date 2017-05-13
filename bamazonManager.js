@@ -13,9 +13,6 @@ var connection = mySQL.createConnection({
 
 
 
-
-
-
 function askAction(){	
 	inquirer.prompt([
 
