@@ -15,10 +15,15 @@
 ![Mockup for feature A](images/customer_screenshot1.png)
 ...
 
-You can then select an item ID and amount you would like to order. The total price and stock remaining will show. The inquirer will then start over.
+You can then select an item ID and amount you would like to order. The result will show-
+
+* Total cost of purchase
+* Total quantity of that product remaining
+* total sales of that product
+* total sales of the department that item is in
 
   ...
-![Mockup for feature A](images/customer_screenshot2.png)
+![Mockup for feature A](images/new_sale.png)
 ...
 
 If the amount requested is more than is in stock, you will be rejected and advised the remaining stock of that item.
@@ -81,4 +86,28 @@ You will then choose the price and the quantity and the updated table will be di
   ...
 ![Mockup for feature A](images/manager_screenshot7.png)
 ...
+
+### bamazonsupervisor.js
+
+The supervisor view allows you to view department statistics and add new departments
+
+It begins by asking what action you would like to take
+  ...
+![Mockup for feature A](images/supervisor.png)
+...
+
+If "view sales by department" is chosen, it will give all information in the SQL table, plus add a new table which calculates the profit.
+  ...
+![Mockup for feature A](images/screenshot_sales_by_dept.png)
+...
+
+If "Create new department" is chosen , you will be prompted for the name and overhead cost of the department. The total sales will be set to 0.It will the display the updated table of all departments.
+
+  ...
+![Mockup for feature A](images/screenshot_new_dept.png)
+...
+
+
+
+
 
