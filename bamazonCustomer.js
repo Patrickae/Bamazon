@@ -62,13 +62,51 @@ function interface(){
 
 
 				if(res[0].stock_quantity > amount){
-					console.log("--------Total Price: $"+res[0].price * amount+"------------");
+
+					var department = res[0].department_name;
+
+					var total = res[0].price * amount;
+					var newProductTotal = parseFloat(total) + res[0].product_sales;
+
+					console.log("--------Total Price: $"+total+"------------");
+
+
 					var updatedQuantity = res[0].stock_quantity - amount;
 
+					//update the stock of the product
 					connection.query("UPDATE products SET ? WHERE ?",[{stock_quantity: updatedQuantity},{item_id: ID}], function(err){
 							if (err) throw err;
 							console.log("-----updated quantity "+ updatedQuantity+"---------");
 									});
+
+					//update total sales of the product
+					connection.query("UPDATE products SET ? WHERE ?",[{product_sales: newProductTotal},{item_id: ID}], function(err){
+							if (err) throw err;
+							console.log("-----updated total sales "+ newProductTotal+"---------");
+									});
+
+
+					//update the total sales for the department
+
+					connection.query("SELECT * FROM products WHERE ?",{department_name: department}, function(err, res){
+						if (err) throw err;
+
+						var departmentSales = 0;
+
+						for(i=0; i<res.length; i++){
+							departmentSales += res[i].product_sales;
+						};
+						
+
+
+						connection.query("UPDATE departments SET ? WHERE ?",[{total_sales: departmentSales},{department_name: department}], function(err){
+							if (err) throw err;
+							console.log("-----Total Department Sales "+ departmentSales+"---------");
+									});
+
+
+					});
+
 
 				}else{
 					console.log("Sorry, there are only " + res[0].stock_quantity +" of this item in stock");
