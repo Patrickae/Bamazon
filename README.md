@@ -3,11 +3,11 @@
   Bamazon has three node apps.
   
  
-*bamazonCustomer.js
-*bamazonManager.js
-*bamazonSupervisor.js
+* bamazonCustomer.js
+* bamazonManager.js
+* bamazonSupervisor.js
 
-###bamazonCustomer.js
+### bamazonCustomer.js
 
   when you open bamazonCustomer.js will be shown a list of all available products, their ID, and their price.
   
@@ -28,21 +28,21 @@ If the amount requested is more than is in stock, you will be rejected and advis
 ...
 
 
-###bamazonManager.js
+### bamazonManager.js
 
 bamazonManager.js will give you four options to choose from
 
-*View products for sale
-*View low inventory
-*Add to inventory
-*Add new product
+* View products for sale
+* View low inventory
+* Add to inventory
+* Add new product
   ...
 ![Mockup for feature A](images/manager_screenshot1.png)
 ...
 
 
 
-#####"View products for sale" 
+##### "View products for sale" 
 will show you a list of the products by ID, name, price, and quantity
 
   ...
@@ -50,14 +50,14 @@ will show you a list of the products by ID, name, price, and quantity
 ...
 
 
-#####"View low inventory" 
+##### "View low inventory" 
 will show you a list with the same information, but only for products with a qantity of 5 or less.
 
   ...
 ![Mockup for feature A](images/manager_screenshot3.png)
 ...
 
-#####"Add to inventory" 
+##### "Add to inventory" 
 will allow you to select the product by ID and add to the inventory.
 
   ...
@@ -67,7 +67,7 @@ will allow you to select the product by ID and add to the inventory.
 ![Mockup for feature A](images/manager_screenshot5.png)
 ...
 
-#####"Add new product"
+##### "Add new product"
 will allow you to add a new product to your table
 
 You will first add the name and select the department
