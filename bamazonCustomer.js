@@ -82,7 +82,7 @@ function interface(){
 					//update total sales of the product
 					connection.query("UPDATE products SET ? WHERE ?",[{product_sales: newProductTotal},{item_id: ID}], function(err){
 							if (err) throw err;
-							console.log("-----updated total sales "+ newProductTotal+"---------");
+							console.log("-----updated total sales $"+ newProductTotal+"---------");
 									});
 
 
@@ -101,7 +101,7 @@ function interface(){
 
 						connection.query("UPDATE departments SET ? WHERE ?",[{total_sales: departmentSales},{department_name: department}], function(err){
 							if (err) throw err;
-							console.log("-----Total Department Sales "+ departmentSales+"---------");
+							console.log("-----Total Department Sales $"+ departmentSales+"---------");
 									});
 
 
